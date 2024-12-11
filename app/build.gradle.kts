@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -72,12 +74,21 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.savedstate)
 
     implementation(libs.retrofit)
+
+    // GSON
     // https://github.com/square/retrofit/tree/trunk/retrofit-converters/gson
-    // implementation(libs.retrofit.gson.converter)
+    implementation(libs.retrofit.gson.converter)
+    implementation(libs.parser.gson)
+
+    // MOSHI
     // https://github.com/square/retrofit/tree/trunk/retrofit-converters/moshi
     // implementation(libs.retrofit.moshi.converter)
+    // ksp(libs.parser.moshi)
+
+    // KOTLINX SERIALIZATION
     // https://github.com/square/retrofit/tree/trunk/retrofit-converters/kotlinx-serialization
     // implementation(libs.retrofit.kotlinx.serialization.converter)
+    // implementation(libs.parser.kotlinx.serialization)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
