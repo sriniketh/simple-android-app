@@ -73,6 +73,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.viewmodel.savedstate)
 
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network)
+
     implementation(libs.retrofit)
 
     // GSON
